@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="GiantBombQuiz.SplashScreenControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="White" Width="480" Height="800">
+        <Image Height="800" HorizontalAlignment="Left" Margin="0,0,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="480" Source="SplashScreenImage.jpg" />
+        <ProgressBar HorizontalAlignment="Left" Margin="52,365,0,416" Name="progressBar1" Width="383" IsIndeterminate="True"  />
+        <TextBlock HorizontalAlignment="Left" Margin="10,330,0,440" Name="textBlock1" Width="460" Foreground="White" FontSize="22" TextAlignment="Center" >
+        	<Run Text="Next Round is Loading"/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+    </Grid>
+</UserControl>

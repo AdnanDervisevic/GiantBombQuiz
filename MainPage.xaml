@@ -1,0 +1,226 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GiantBombQuiz.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Panorama Title="GiantBomb Quiz">
+            <controls:Panorama.Background>
+
+                <ImageBrush ImageSource="images\PanoramaBackground.png"/>
+            </controls:Panorama.Background>
+
+            <!--The first PanoramaItem (Category) -->
+            <controls:PanoramaItem Header="Developers" Foreground="White" BorderBrush="Black" Background="#4C000000">
+
+                <StackPanel>
+                    <Border Background="#BF172344" Height="60" Width="420" Margin="15, 15">
+                        <TextBlock Height="60" VerticalAlignment="Top" Margin="10,3,44,0" FontSize="19" >
+                            <Run x:Name="Question1" Text="Which developer is responsible for"/>
+                            <LineBreak />
+                    		<Run x:Name="Q1_Title" Text="Test"/>
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock TextAlignment="Right" Margin="-10,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run Text="Worth 1500 points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Left" Margin="15,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run x:Name="currentScoreQ1"  Text=" 0" />
+                        <Run Text=" points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Center" Margin="15,-15,15,-15" Foreground="#66FFFFFF" FontSize="22">
+                       <Run x:Name="timer1" Text="100" Foreground="White"  />
+                    </TextBlock>
+
+                    <Button x:Name="Q1_Option1" Click="category1_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q1_Option2" Click="category1_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q1_Option3" Click="category1_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q1_Option4" Click="category1_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                
+                    <TextBlock TextAlignment="Right" Margin="10,15,20,-10">
+                        <Run x:Name="Q1_attrib" Foreground="#33FFFFFF">Data from GiantBomb.com</Run>
+                    </TextBlock>
+
+                    <Button x:Name="q1Restart" Background="{x:Null}" BorderBrush="{x:Null}" Width="180" Margin="-200,15,0,0" Foreground="#7FFFFFFF" Click="restart_Click">Restart</Button>
+                </StackPanel>
+
+            </controls:PanoramaItem>
+
+            <!--The second PanoramaItem (Category) -->
+            <controls:PanoramaItem Header="Release date" Foreground="White" BorderBrush="Black" Background="#4C000000">
+
+                <StackPanel>
+                    <Border Background="#BF172344" Height="60" Width="420" Margin="15, 15">
+                        <TextBlock Height="60" VerticalAlignment="Top" Margin="10,3,44,0" FontSize="19" >
+                            <Run x:Name="Question2" Text="What year was this game released"/>
+                            <LineBreak />
+                    		<Run x:Name="Q2_Title" />
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock TextAlignment="Right" Margin="-10,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run Text="Worth 1500 points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Left" Margin="15,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run x:Name="currentScoreQ2"  Text=" 0" />
+                        <Run Text=" points" />
+                    </TextBlock>
+                    
+                    <TextBlock TextAlignment="Center" Margin="15,-15,15,-15" Foreground="#66FFFFFF" FontSize="22">
+                       <Run x:Name="timer2" Text="100" Foreground="White"  />
+                    </TextBlock>
+
+                    <Button x:Name="Q2_Option1" Click="category2_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q2_Option2" Click="category2_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q2_Option3" Click="category2_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q2_Option4" Click="category2_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    
+                    <TextBlock TextAlignment="Right" Margin="10,15,20,-10">
+                        <Run Foreground="#33FFFFFF">Data from GiantBomb.com</Run>
+                    </TextBlock>
+
+                    <Button x:Name="q2Restart" Background="{x:Null}" BorderBrush="{x:Null}" Width="180" Margin="-200,15,0,0" Foreground="#7FFFFFFF" Click="restart_Click">Restart</Button>
+                </StackPanel>
+
+            </controls:PanoramaItem>
+
+            <!--The third PanoramaItem (Category) -->
+            <controls:PanoramaItem Header="Publishers" Foreground="White" BorderBrush="Black" Background="#4C000000">
+
+                <StackPanel>
+                    <Border Background="#BF172344" Height="60" Width="420" Margin="15, 15">
+                        <TextBlock Height="60" VerticalAlignment="Top" Margin="10,3,44,0" FontSize="19" >
+                            <Run x:Name="Question3" Text="Which company published"/>
+                            <LineBreak />
+                    		<Run x:Name="Q3_Title" />
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock TextAlignment="Right" Margin="-10,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run Text="Worth 1000 points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Left" Margin="15,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run x:Name="currentScoreQ3"  Text=" 0" />
+                        <Run Text=" points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Center" Margin="15,-15,15,-15" Foreground="#66FFFFFF" FontSize="22">
+                       <Run x:Name="timer3" Text="100" Foreground="White"  />
+                    </TextBlock>
+
+
+                    <Button x:Name="Q3_Option1" Click="category3_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q3_Option2" Click="category3_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q3_Option3" Click="category3_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q3_Option4" Click="category3_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+
+                    <TextBlock TextAlignment="Right" Margin="10,15,20,-10">
+                        <Run Foreground="#33FFFFFF">Data from GiantBomb.com</Run>
+                    </TextBlock>
+
+                    <Button x:Name="q3Restart" Background="{x:Null}" BorderBrush="{x:Null}" Width="180" Margin="-200,15,0,0" Foreground="#7FFFFFFF" Click="restart_Click">Restart</Button>
+                </StackPanel>
+
+            </controls:PanoramaItem>
+
+            <!--The fourth PanoramaItem (Category) -->
+            <controls:PanoramaItem Header="Characters" Foreground="White" BorderBrush="Black" Background="#4C000000">
+
+                <StackPanel>
+                    <Border Background="#BF172344" Height="60" Width="420" Margin="15, 15">
+                        <TextBlock Height="60" VerticalAlignment="Top" Margin="10,3,44,0" FontSize="19" >
+                            <Run x:Name="Question4" Text="Who is the leading character in"/>
+                            <LineBreak />
+                    		<Run x:Name="Q4_Title" />
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock TextAlignment="Right" Margin="-10,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run Text="Worth 500 points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Left" Margin="15,-15,15,-15" Foreground="#66FFFFFF"> 
+
+                        <Run x:Name="currentScoreQ4"  Text=" 0" />
+                        <Run Text=" points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Center" Margin="15,-15,15,-15" Foreground="#66FFFFFF" FontSize="22">
+                       <Run x:Name="timer4" Text="100" Foreground="White"  />
+                    </TextBlock>
+
+                    <Button x:Name="Q4_Option1" Click="category4_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q4_Option2" Click="category4_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q4_Option3" Click="category4_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q4_Option4" Click="category4_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+
+                    <TextBlock TextAlignment="Right" Margin="10,15,20,-10">
+                        <Run Foreground="#33FFFFFF">Data from GiantBomb.com</Run>
+                    </TextBlock>
+
+                    <Button x:Name="q4Restart" Background="{x:Null}" BorderBrush="{x:Null}" Width="180" Margin="-200,15,0,0" Foreground="#7FFFFFFF" Click="restart_Click">Restart</Button>
+
+                </StackPanel>
+
+            </controls:PanoramaItem>
+
+            <!--The fifth PanoramaItem (Category) -->
+            <controls:PanoramaItem Header="Genres" Foreground="White" BorderBrush="Black" Background="#4C000000">
+
+                <StackPanel>
+                    <Border Background="#BF172344" Height="60" Width="420" Margin="15, 15">
+                        <TextBlock Height="60" VerticalAlignment="Top" Margin="10,3,44,0" FontSize="19" >
+                            <Run x:Name="Question5" Text="Which genre does this game belong to"/>
+                            <LineBreak />
+                    		<Run x:Name="Q5_Title" />
+                        </TextBlock>
+                    </Border>
+
+                    <TextBlock TextAlignment="Right" Margin="-10,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run Text="Worth 500 points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Left" Margin="15,-15,15,-15" Foreground="#66FFFFFF"> 
+                        <Run x:Name="currentScoreQ5"  Text=" 0" />
+                        <Run Text=" points" />
+                    </TextBlock>
+
+                    <TextBlock TextAlignment="Center" Margin="15,-15,15,-15" Foreground="#66FFFFFF" FontSize="22">
+                       <Run x:Name="timer5" Text="100" Foreground="White"  />
+                    </TextBlock>
+
+
+                    <Button x:Name="Q5_Option1" Click="category5_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q5_Option2" Click="category5_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q5_Option3" Click="category5_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BF000000" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,-30"/>
+                    <Button x:Name="Q5_Option4" Click="category5_Click" Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="420" Background="#BFFFFFFF" BorderBrush="{x:Null}" Foreground="Black" Margin="0,0,0,-30"/>
+
+                    <TextBlock TextAlignment="Right" Margin="10,15,20,-10">
+                        <Run Foreground="#33FFFFFF">Data from GiantBomb.com</Run>
+                    </TextBlock>
+
+                    <Button x:Name="q5Restart" Background="{x:Null}" BorderBrush="{x:Null}" Width="180" Margin="-200,15,0,0" Foreground="#7FFFFFFF" Click="restart_Click">Restart</Button>
+
+                </StackPanel>
+
+            </controls:PanoramaItem>
+        </controls:Panorama>
+
+    </Grid>
+</phone:PhoneApplicationPage>
